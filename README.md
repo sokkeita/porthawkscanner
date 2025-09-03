@@ -101,7 +101,7 @@ This project is open-source and free to use for learning and personal projects.
 You can add a license if needed (MIT, GPL, etc.).
 
 👨‍💻 Author:
-Developed by [Your Name or GitHub Username]
+Developed by sokkeita
 
 🧠 Tips
 Always scan responsibly.
