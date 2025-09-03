@@ -4,8 +4,8 @@ from colorama import Fore
 from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor
 import time
-from scan_core import scan_port
-from queues import open_port, close_port, filtered_port
+from core.scan_core import scan_port
+from utils.queues import open_port, close_port, filtered_port
 
 def scan_udp_func(ip, port):
     try:

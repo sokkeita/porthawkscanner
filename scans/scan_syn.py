@@ -2,8 +2,8 @@
 from scapy.all import IP, TCP, sr, send
 from colorama import Fore
 from datetime import datetime
-from scan_core import scan_port
-from queues import open_port, close_port, filtered_port
+from core.scan_core import scan_port
+from utils.queues import open_port, close_port, filtered_port
 import socket
 
 def scan_syn_func(ip, port):

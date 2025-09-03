@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from queues import open_port, close_port, filtered_port
+from utils.queues import open_port, close_port, filtered_port
 from concurrent.futures import ThreadPoolExecutor
 from colorama import Fore
 
@@ -12,7 +12,7 @@ def scan_port(ip, port_input, funcscan):
                 print("[!] Invalid range: start port is more litle than end port.")
                 return
             port_list = range(start_port, end_port + 1)
-            with ThreadPoolExecutor(max_workers=10) as executor:
+            with ThreadPoolExecutor(max_workers=40) as executor:
                 executor.map(lambda port: funcscan(ip, port), port_list)
             while not open_port.empty():
                 print(f"[+] Port {Fore.GREEN}{open_port.get()}{Fore.RESET} is open")
@@ -22,7 +22,7 @@ def scan_port(ip, port_input, funcscan):
     elif ',' in port_input:
         try:
             port_list = [int(port) for port in port_input.split(',')]
-            with ThreadPoolExecutor(max_workers=10) as executor:
+            with ThreadPoolExecutor(max_workers=40) as executor:
                 executor.map(lambda port: funcscan(ip, port), port_list)
             #print("{:<20} {:<20} {:<20}".format("Ports", "Status", "Services"))
             print("{:<20} {:<20} ".format("Ports", "Status",))

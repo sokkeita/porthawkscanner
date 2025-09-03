@@ -2,10 +2,10 @@
 import argparse
 import time
 from colorama import Fore, init
-from utils import is_valid_ip, check_ip_reachability
-from scan_syn import scan_ports_syn
-from scan_tcp import scan_ports_tcp
-from scan_udp import scan_port_udp
+from utils.utils import is_valid_ip, check_ip_reachability
+from scans.scan_syn import scan_ports_syn
+from scans.scan_tcp import scan_ports_tcp
+from scans.scan_udp import scan_port_udp
 from os_detection import osdetection
 from math import floor
 
